@@ -1,0 +1,21 @@
+如果1000个用户上传了同一个视频，百度云用会md5摘要判断为同一个文件，只在服务器存一份，用户存储的文件都指向这一份文件。如果该视频被封，只要封一份文件，那1000个用户的这份文件都会被封。
+对于一些特殊文件，需要加大被封的难度，达到保护视频的目的。
+
+本程序是向文件末尾添加干扰字符（也就不到1kB），和还原添加过干扰字符的文件，不影响视频观看。如果有特殊需求需要还原，也可以还原（一般用不到，一般只还原文本文件的时候用）。
+
+添加干扰的文件，会被重命名为 Add-原文件名
+解除干扰的文件，会被还原文件名
+
+
+fileAddBaiDuYun/fileAddBaiDuYun 文件或目录全路径 是否删除原文件
+
+向/Users/testfile目录或文件里的所有文件添加干扰 递归执行
+fileAddBaiDuYun /Users/testfile 
+向/Users/testfile目录或文件里的所有文件添加干扰 递归执行 并删除原文件
+fileAddBaiDuYun /Users/testfile 0
+
+
+向/Users/testfile目录或文件里的所有文件解除干扰 递归执行
+fileAddBaiDuYun /Users/testfile 
+向/Users/testfile目录或文件里的所有文件解除干扰 递归执行 并删除原文件
+fileAddBaiDuYun /Users/testfile 0
